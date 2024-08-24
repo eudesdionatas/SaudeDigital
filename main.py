@@ -7,6 +7,10 @@ app.config['SECRET_KEY'] = 'senha'
 def home():
     return render_template('cadastro.html')
 
+@app.route('/tests')
+def mask():
+    return render_template('testeMask.html')
+
 @app.route('/submit_form', methods=['POST'])
 def submitForm():
     nome            = request.form.get('nome')
@@ -15,8 +19,17 @@ def submitForm():
     senhaConfirmada = request.form.get('confirmar_senha')
     dtNascimento    = request.form.get('data_nascimento')
     genero          = request.form.get('genero')
-    telefone        = request.form.get('telefone')
-    endereco        = request.form.get('endereco')
+    celular         = request.form.get('celular')
+    telefoneFixo    = request.form.get('telefone_fixo')
+    cpf             = request.form.get('cpf')
+    profissao       = request.form.get('profissao')
+    cep             = request.form.get('cep')
+    logradouro      = request.form.get('logradouro')
+    numero          = request.form.get('numero')
+    bairro          = request.form.get('bairro')
+    cidade          = request.form.get('cidade')
+    estado          = request.form.get('estado')
+    complemento     = request.form.get('complemento')
 
     print(nome)
 

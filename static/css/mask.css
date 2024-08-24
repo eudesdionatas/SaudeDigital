@@ -1,0 +1,10 @@
+
+.is-invalid {
+    border-color: #dc3545;
+}
+.invalid-feedback {
+    display: none;
+}
+.is-invalid ~ .invalid-feedback {
+    display: block;
+}
