@@ -113,6 +113,9 @@
                         <div class="form-group">
                             <label for="cep">CEP</label>
                             <input type="text" class="form-control" id="cep" name="cep"  placeholder="00000-00">
+                            <div class="invalid-feedback" id="cep-feedback">
+                                CEP inválido
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -188,6 +191,7 @@
         </div>
 
         <script src="static/js/mask.js"></script>
+        <script src="static/js/apiCorreios.js"></script>
 
         <!-- Link para o JavaScript do Bootstrap (opcional) -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>

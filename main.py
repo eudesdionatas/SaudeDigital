@@ -9,7 +9,7 @@ def home():
 
 @app.route('/tests')
 def mask():
-    return render_template('testeMask.html')
+    return render_template('tests.html')
 
 @app.route('/submit_form', methods=['POST'])
 def submitForm():

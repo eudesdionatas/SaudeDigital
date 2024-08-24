@@ -12,7 +12,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-    $('#cep').mask('00000-00');
+    $('#cep').mask('00000-000');
 });
 
 
