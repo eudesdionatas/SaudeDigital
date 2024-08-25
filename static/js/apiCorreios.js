@@ -6,9 +6,11 @@ document.getElementById('cep').addEventListener('blur', function() {
     
     // Limpa os campos se o CEP estiver vazio
     if (cep === "") {
+        $(this).removeClass('is-invalid');
+        $(this).removeClass('is-valid');
         document.getElementById('logradouro').value = '';
         document.getElementById('bairro').value = '';
-        document.getElementById('cidade').value = '';
+        document.getElementById('cidade_local').value = '';
         document.getElementById('uf').value = '';
         feedback.textContent = '';
         return;
@@ -23,18 +25,20 @@ document.getElementById('cep').addEventListener('blur', function() {
                     feedback.textContent = 'CEP não encontrado';
                     document.getElementById('logradouro').value = '';
                     document.getElementById('bairro').value = '';
-                    document.getElementById('cidade').value = '';
+                    document.getElementById('cidade_local').value = '';
                     document.getElementById('uf').value = '';
                     feedback.classList.add('d-block'); // Adiciona classe para mostrar feedback
-                    emailField.classList.add('is-invalid');
+                    cepField.classList.add('is-invalid');
+                    cepField.classList.remove('is-valid');
                 } else {
                     feedback.textContent = '';
                     document.getElementById('logradouro').value = data.logradouro;
                     document.getElementById('bairro').value = data.bairro;
-                    document.getElementById('cidade').value = data.localidade;
+                    document.getElementById('cidade_local').value = data.localidade;
                     document.getElementById('uf').value = data.uf;
                     feedback.classList.remove('d-block'); // Remove classe para esconder feedback
                     cepField.classList.remove('is-invalid');
+                    cepField.classList.add('is-valid');
                 }
             })
             .catch(error => {
@@ -47,9 +51,10 @@ document.getElementById('cep').addEventListener('blur', function() {
         feedback.textContent = 'CEP inválido';
         document.getElementById('logradouro').value = '';
         document.getElementById('bairro').value = '';
-        document.getElementById('cidade').value = '';
+        document.getElementById('cidade_local').value = '';
         document.getElementById('uf').value = '';
         feedback.classList.add('d-block'); // Adiciona classe para mostrar feedback
         cepField.classList.add('is-invalid');
+        cepField.classList.remove('is-valid');
     }
 });
